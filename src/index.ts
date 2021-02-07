@@ -1,11 +1,11 @@
-import "./Services/DotenvCapsule";
+import "Setup/dotenv/DotenvCapsule";
 
-import * as config from "Configs/ormconfig";
+import * as config from "Setup/orm/ormconfig";
 import "reflect-metadata";
 import { Application, DaemonCommand, Express } from "@mvf/servicer";
 import { createConnection } from "typeorm";
-import { RestEvents } from "./EventSources/Rest";
-import routes from "./Services/Express/routes";
+import { RestEvents } from "EventSources/Rest";
+import routes from "Setup/express/routes";
 
 const setupApplication = async (): Promise<void> => {
   await createConnection(config);

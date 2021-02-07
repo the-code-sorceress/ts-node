@@ -1,6 +1,6 @@
-import "../Services/DotenvCapsule";
+import "../dotenv/DotenvCapsule";
 import { ConnectionOptions } from "typeorm";
-import SnakeCaseNamingStrategy from "../Services/SnakeCaseNamingStrategy";
+import SnakeCaseNamingStrategy from "./SnakeCaseNamingStrategy";
 import { join } from "path";
 
 const config: ConnectionOptions = {

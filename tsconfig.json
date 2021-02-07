@@ -18,9 +18,8 @@
       "Entities/*": ["./Entities/*"],
       "Services/*": ["./Services/*"],
       "Actions/*": ["./Actions/*"],
-      "Aggregates/*": ["./Aggregates/*"],
       "Constants/*": ["./Constants/*"],
-      "Configs/*": ["./Configs/*"],
+      "Setup/*": ["./Setup/*"],
       "EventSources/*": ["./EventSources/*"]
     },
     "typeRoots": [

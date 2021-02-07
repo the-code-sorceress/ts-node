@@ -1,5 +1,5 @@
 import { actionRoute, IRoute, Method } from "@mvf/servicer";
-import { Rest } from "../../EventSources/Rest";
+import { Rest } from "EventSources/Rest";
 
 const routes: IRoute[] = [
   {

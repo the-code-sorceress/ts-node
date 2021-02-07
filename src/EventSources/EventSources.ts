@@ -1,6 +1,6 @@
 import { IEventSources } from "@mvf/servicer";
 import { Rest, RestEvents } from "./Rest";
 
-export const GenericEventSources: IEventSources = {
+export const EventSources: IEventSources = {
   [Rest.TYPE]: RestEvents,
 };
