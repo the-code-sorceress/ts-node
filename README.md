@@ -1,7 +1,12 @@
-# ts-node-rest
-A dockerised TS Node REST setup with typeorm.
+# ts-node-stretch
+A dockerised TS Node setup with typeorm. 
 
-This uses the open source @mvf/servicer npm package, designed to work with our infrastructure
+This uses the open source @mvf/servicer npm package which supports configuration for 
+- Expres
+- Apollo
+- SQS
+- Commands
+- Combination of the above
 
 # Setup 
 Prequisites: Make and Docker
