@@ -1,0 +1,59 @@
+version: '3'
+services:
+  compiler:
+    build: .
+    container_name: ts-node-stretch-compiler
+    volumes:
+    - .:/app:cached
+    - dist:/dist
+    environment:
+      ENVIRONMENT_FILE: development
+      TSC_NONPOLLING_WATCHER: 1
+    entrypoint: tsc --preserveWatchOutput --watch
+    restart: always
+
+  express:
+    build: .
+    container_name: ts-node-stretch-express
+    networks: [ts-node-stretch]
+    ports: ["9002:80"]
+    volumes:
+    - .:/app:cached
+    - dist:/app/dist
+    environment:
+      ENVIRONMENT_FILE: development
+    entrypoint: npm run express
+    restart: always
+
+  mysql:
+    image: mysql:5.7
+    container_name: ts-node-stretch-mysql
+    restart: always
+    networks: [ts-node-stretch]
+    ports: ["9003:3306"]
+    volumes:
+      - mysql:/var/lib/mysql:cached
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345
+      MYSQL_DATABASE: ts-node-stretch-db
+      MYSQL_USER: ts-node-stretch-user
+      MYSQL_PASSWORD: 12345
+
+  mysql_test:
+    image: mysql:5.7
+    container_name: ts-node-stretch-mysql-test
+    restart: always
+    networks: [ts-node-stretch]
+    ports: ["9004:3306"]
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345
+      MYSQL_DATABASE: ts-node-stretch-db
+      MYSQL_USER: ts-node-stretch-user
+      MYSQL_PASSWORD: 12345
+
+volumes:
+  mysql:
+  dist:
+
+networks:
+  ts-node-stretch:

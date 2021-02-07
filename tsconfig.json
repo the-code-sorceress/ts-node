@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "target": "es2018",
+    "module": "commonjs",
+    "outDir": "/dist",
+    "rootDir": "./src",
+    "removeComments": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "moduleResolution": "node",
+    "baseUrl": "./src",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "paths": {
+      "Entities/*": ["./Entities/*"],
+      "Services/*": ["./Services/*"],
+      "Actions/*": ["./Actions/*"],
+      "Aggregates/*": ["./Aggregates/*"],
+      "Constants/*": ["./Constants/*"],
+      "Configs/*": ["./Configs/*"],
+      "EventSources/*": ["./EventSources/*"]
+    },
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/Typings"
+    ]
+  },
+  "exclude": ["node_modules", "**/*.spec.ts", "dist"]
+}
